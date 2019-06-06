@@ -7,11 +7,12 @@ import org.junit.jupiter.api.Test;
 import ca.csf.dfc.classes.Addition;
 import ca.csf.dfc.classes.Entier;
 import ca.csf.dfc.classes.Expression;
+import ca.csf.dfc.exception.DivisionParZeroException;
 
 class AdditionTest {
 
 	@Test
-	void ADDITION_DEUX_POSITIF() {
+	void ADDITION_DEUX_POSITIF() throws DivisionParZeroException {
 		Expression valeur1= new Entier(1);
 		Expression valeur2=new Entier(1);
 		int ValeurVoulue=2;
@@ -23,7 +24,7 @@ class AdditionTest {
 	}
 	
 	@Test
-	void ADDITION_DEUX_NEGATIF() {
+	void ADDITION_DEUX_NEGATIF() throws DivisionParZeroException {
 		Expression valeur1= new Entier(-1);
 		Expression valeur2=new Entier(-1);
 		int ValeurVoulue=-2;
@@ -35,7 +36,7 @@ class AdditionTest {
 	}
 	
 	@Test
-	void ADDITION_1_NEG_1_POSITIF() {
+	void ADDITION_1_NEG_1_POSITIF() throws DivisionParZeroException {
 		Expression valeur1= new Entier(-1);
 		Expression valeur2=new Entier(1);
 		int ValeurVoulue=0;

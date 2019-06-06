@@ -3,6 +3,8 @@
  */
 package ca.csf.dfc.classes;
 
+import ca.csf.dfc.exception.DivisionParZeroException;
+
 /**
  * @author DomLe
  *
@@ -16,9 +18,14 @@ public class Division extends OperateurBinaire implements Expression{
 	}
 
 	@Override
-	public int calculer() {
+	public int calculer() throws DivisionParZeroException {
 		int valeur1 = this.calculerOperande1();
 		int valeur2 = this.calculerOperande2();
+		
+		if (valeur2==0) {
+			throw new DivisionParZeroException();
+		}
+		
 		return valeur1 / valeur2;
 	}
 

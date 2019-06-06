@@ -3,6 +3,8 @@
  */
 package ca.csf.dfc.classes;
 
+import ca.csf.dfc.exception.DivisionParZeroException;
+
 /**
  * @author DomLe
  *
@@ -25,12 +27,12 @@ public abstract class OperateurBinaire implements Expression{
 	/*
 	 * Calculeur de variables (get)
 	 */
-	protected int calculerOperande1() {
+	protected int calculerOperande1() throws DivisionParZeroException {
 		
 		return this.m_operande1.calculer();
 	}
 	
-	protected int calculerOperande2() {
+	protected int calculerOperande2() throws DivisionParZeroException {
 		
 		return this.m_operande2.calculer();
 	}
